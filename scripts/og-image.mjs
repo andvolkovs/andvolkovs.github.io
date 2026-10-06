@@ -12,6 +12,8 @@ const browser = await chromium.launch(executablePath ? { executablePath } : { ch
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 await page.goto(`${base}/lab/og/`, { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
+// The dev server's toolbar floats over the bottom of the card.
+await page.evaluate(() => document.querySelector('astro-dev-toolbar')?.remove());
 await page.locator('#og').screenshot({ path: 'public/og.png' });
 await browser.close();
 console.log('Saved public/og.png');

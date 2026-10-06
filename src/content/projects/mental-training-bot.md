@@ -30,7 +30,7 @@ highlights:
   - Features ship behind runtime flags, no redeploy needed
 links:
   - label: Source code
-    url: https://github.com/Motyst/memory-exercise-telegram-bot
+    url: https://github.com/andvolkovs/memory-exercise-telegram-bot
     kind: repo
 ---
 

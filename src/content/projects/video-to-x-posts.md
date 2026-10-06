@@ -31,7 +31,7 @@ highlights:
   - Also writes long-form articles and promo copy
 links:
   - label: Source code
-    url: https://github.com/Motyst/video-to-x-posts
+    url: https://github.com/andvolkovs/video-to-x-posts
     kind: repo
 ---
 

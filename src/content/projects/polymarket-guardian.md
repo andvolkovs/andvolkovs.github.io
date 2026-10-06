@@ -31,7 +31,7 @@ highlights:
   - Pluggable notifiers, with Telegram and Discord templates included
 links:
   - label: Source code
-    url: https://github.com/Motyst/polymarket-bot-reward-farm
+    url: https://github.com/andvolkovs/polymarket-bot-reward-farm
     kind: repo
 ---
 

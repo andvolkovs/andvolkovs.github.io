@@ -124,5 +124,5 @@ Content and ideas to come back to are listed in [`docs/todo.md`](docs/todo.md).
 
 ## Deploying
 
-Live at **https://motyst.github.io**. Every push to `main` builds and deploys
+Live at **https://andvolkovs.github.io**. Every push to `main` builds and deploys
 automatically via GitHub Actions (`.github/workflows/deploy.yml`).
