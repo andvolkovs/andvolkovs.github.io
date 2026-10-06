@@ -37,22 +37,19 @@ skills: [TypeScript, React, Node.js, Hono, SQLite, MCP, Claude Code, OpenAI API,
 workflow:
   - title: Capture
     icon: mic
-    description: Type with shorthand like "#work !now ~45", or speak, and an LLM turns the recording into task drafts. End with a board, a priority or "today" to file it there.
+    description: I type or say a task, and AI turns it into a draft.
   - title: Plan the day
     icon: calendar-clock
-    description: Today holds up to three main tasks, plus secondary ones if there's time. Unfinished ones carry over to the next day.
+    description: Up to three main tasks for today, and the rest if there's time.
   - title: Focus
     icon: target
-    description: One task in progress at a time, with a timer and what's up next. Starting another pauses the first.
+    description: One task at a time, with a timer.
   - title: Agents
     icon: bot
-    description: Claude Code or any MCP client reads and updates the board, with scoped tokens and no delete. I can hand a task to an agent, and it sends it back for my review.
-  - title: Approve
-    icon: circle-check
-    description: The assistant suggests an order and proposes changes. Nothing is saved until I tick it.
+    description: AI agents can work on tasks, but nothing is saved until I approve it.
   - title: Sync & log
     icon: radio
-    description: Every change is logged with who made it, can be undone and appears live on every device.
+    description: Every change is logged and shows up live on every device.
 highlights:
   - AI agents like Claude Code use it over MCP
   - The AI proposes, I approve, and the log shows both
