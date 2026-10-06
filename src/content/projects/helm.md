@@ -10,9 +10,9 @@ order: 1.5
 accent: '#10b981'
 cover:
   type: image
-  src: /media/helm/desktop-focus.webp
-  alt: Helm's Focus view on a desktop, with the task in progress, its time, subtasks, a timer and what's up next
-  caption: Focus, the view to leave open all day
+  src: /media/helm/desktop-board.webp
+  alt: Helm's board on a desktop, with a tab and a coloured panel per project, tasks grouped by Now, Soon and Someday and their key words in bold
+  caption: The board, one panel per project
 gallery:
   - type: image
     src: /media/helm/desktop-assistant.webp
@@ -24,14 +24,10 @@ gallery:
     alt: Recording a task by voice on a phone, then the task drafted from what was said, ready to check
     caption: Say a task, check the draft
   - type: image
-    src: /media/helm/desktop-board.webp
-    alt: The board with one coloured panel per project, tasks grouped by Now, Soon and Someday
-    caption: The board, one panel per project
-  - type: image
     src: /media/helm/phone-app.webp
     frame: none
-    alt: Helm on a phone, showing the board, a project's menu and the Done log grouped by day
-    caption: On a phone, the board, a project's menu and Done
+    alt: Helm on three phones, showing the board, Today with its main and secondary tasks, and Focus with the timer
+    caption: On a phone, the board, Today and Focus
   - type: image
     src: /media/helm/themes.webp
     frame: none
@@ -41,27 +37,31 @@ skills: [TypeScript, React, Node.js, Hono, SQLite, MCP, Claude Code, OpenAI API,
 workflow:
   - title: Capture
     icon: mic
-    description: Type with shorthand like "#work !now ~45", or speak, and an LLM turns the recording into task drafts.
+    description: Type with shorthand like "#work !now ~45", or speak, and an LLM turns the recording into task drafts. End with a board, a priority or "today" to file it there.
+  - title: Plan the day
+    icon: calendar-clock
+    description: Today holds up to three main tasks, plus secondary ones if there's time. Unfinished ones carry over to the next day.
   - title: Focus
     icon: target
     description: One task in progress at a time, with a timer and what's up next. Starting another pauses the first.
   - title: Agents
     icon: bot
-    description: Claude Code or any MCP client reads and updates the board, with scoped tokens and no delete.
+    description: Claude Code or any MCP client reads and updates the board, with scoped tokens and no delete. I can hand a task to an agent, and it sends it back for my review.
   - title: Approve
     icon: circle-check
     description: The assistant suggests an order and proposes changes. Nothing is saved until I tick it.
   - title: Sync & log
     icon: radio
-    description: Every change is logged with who made it and appears live on every device.
+    description: Every change is logged with who made it, can be undone and appears live on every device.
 highlights:
   - AI agents like Claude Code use it over MCP
   - The AI proposes, I approve, and the log shows both
+  - A day plan with up to three main tasks
   - Runs at home on my own Raspberry Pi, reached privately from my phone
-  - Over 120 automated tests across 4 packages
+  - Nearly 200 automated tests across 4 packages
 links:
   - label: Source code
-    url: https://github.com/Motyst/helm
+    url: https://github.com/andvolkovs/helm
     kind: repo
 ---
 

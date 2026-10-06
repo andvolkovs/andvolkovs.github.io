@@ -13,26 +13,26 @@ export const profile = {
   ] as string[],
   /** A short statement shown under the bio. Set to '' to hide. */
   statement:
-    'AI is incredible leverage. Point it at a real problem, build a solid system around it, and one person can deliver what used to take a team.',
+    'AI is the greatest leverage of our time. It allows one person to 10x or even 100x their output and create an immense amount of value for businesses and clients. But only if you point it at a real problem and build a proper system around it.',
   /** "How I think" cards in the About section. Icons: src/data/ui-icons.ts or step-icons.ts */
   principles: [
     {
       icon: 'target',
       color: '#fb7185',
       title: 'Results first',
-      text: 'I judge a project by what it changes: hours saved, posts published, risk avoided. Clever code comes second.',
+      text: 'I judge a project by what it actually changes when it comes to results. How many hours it saves, how much risk it takes away and, ultimately, how that productivity translates into the business making more money.',
     },
     {
       icon: 'workflow',
       color: '#22d3ee',
       title: 'Systems thinking',
-      text: 'I look at the whole pipeline, not single tasks. Get the system right and good results keep coming.',
+      text: 'I try to look at the whole pipeline, not just single tasks. If you get the system right, good results will come.',
     },
     {
       icon: 'user-check',
       color: '#34d399',
       title: 'Human in the loop',
-      text: 'Machines do the heavy lifting, people make the calls. Every system has a checkpoint.',
+      text: 'The bot can do the heavy work, but a person should make the final call and take responsibility for what the AI did.',
     },
   ],
   /** Your photo for the About section, e.g. '/me.jpg' in /public. '' shows your initials. */
@@ -45,7 +45,7 @@ export const profile = {
   /** Optional: path to a PDF in /public, e.g. '/cv.pdf'. Set to '' to hide. */
   resume: '',
   languages: ['Latvian (native)', 'Russian (native)', 'English (professional)'],
-  socials: [{ label: 'GitHub', url: 'https://github.com/Motyst' }],
+  socials: [{ label: 'GitHub', url: 'https://github.com/andvolkovs' }],
 };
 
 export type Profile = typeof profile;
