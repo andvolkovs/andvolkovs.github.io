@@ -40,16 +40,16 @@ workflow:
     description: I type or say a task, and AI turns it into a draft.
   - title: Plan the day
     icon: calendar-clock
-    description: Up to three main tasks for today, and the rest if there's time.
+    description: Set the key tasks for the day, while every other task stays sorted by project and priority.
   - title: Focus
     icon: target
-    description: One task at a time, with a timer.
+    description: Switch on a Pomodoro-like view to focus on one task, with a timer.
   - title: Agents
     icon: bot
-    description: AI agents can work on tasks, but nothing is saved until I approve it.
+    description: AI agents can be assigned to each project. Any task marked for AI can be picked up and done by them.
   - title: Sync & log
     icon: radio
-    description: Every change is logged and shows up live on every device.
+    description: Every change is logged and synced across devices.
 highlights:
   - AI agents like Claude Code use it over MCP
   - The AI proposes, I approve, and the log shows both
