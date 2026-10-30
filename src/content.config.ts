@@ -12,6 +12,8 @@ import { z } from 'astro/zod';
 const media = z.object({
   type: z.enum(['image', 'video', 'youtube', 'embed']),
   src: z.string(),
+  /** Optional light-theme version of an image; `src` is then the dark one. */
+  srcLight: z.string().optional(),
   poster: z.string().optional(),
   caption: z.string().optional(),
   alt: z.string().optional(),

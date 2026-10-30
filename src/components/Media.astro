@@ -28,7 +28,14 @@ const loading = eager ? 'eager' : 'lazy';
   !item || (mode === 'cover' && item.type === 'embed') ? (
     <GeneratedCover title={title} accent={accent} />
   ) : item.type === 'image' ? (
-    <img class={`media ${mode}`} src={item.src} alt={alt} loading={loading} decoding="async" />
+    item.srcLight ? (
+      <>
+        <img class={`media ${mode} only-dark`} src={item.src} alt={alt} loading={loading} decoding="async" />
+        <img class={`media ${mode} only-light`} src={item.srcLight} alt={alt} loading={loading} decoding="async" />
+      </>
+    ) : (
+      <img class={`media ${mode}`} src={item.src} alt={alt} loading={loading} decoding="async" />
+    )
   ) : item.type === 'video' ? (
     mode === 'cover' ? (
       <video
@@ -84,6 +91,15 @@ const loading = eager ? 'eager' : 'lazy';
 
   .media.full {
     height: auto;
+  }
+
+  .only-light,
+  :global(:root[data-theme='light']) .only-dark {
+    display: none;
+  }
+
+  :global(:root[data-theme='light']) .only-light {
+    display: block;
   }
 
   .frame {

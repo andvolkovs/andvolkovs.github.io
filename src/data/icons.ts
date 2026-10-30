@@ -25,7 +25,7 @@ export const icons: Record<string, ProjectIconArt> = {
       <polygon points="48,42.3 49.5,46 53.4,46.2 50.4,48.8 51.4,52.6 48,50.5 44.6,52.6 45.6,48.8 42.6,46.2 46.5,46" fill="#7c3aed" />`,
   },
 
-  /** Publishing Automation: one video beaming out to eight networks. */
+  /** Reach: one video beaming out to eight networks. */
   broadcast: {
     bg: 'linear-gradient(150deg, #1e293b 0%, #020617 100%)',
     art: `
