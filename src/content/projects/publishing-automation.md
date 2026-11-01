@@ -1,5 +1,5 @@
 ---
-title: Reach
+title: Publishing Automation
 summary: One video in, posts on eight platforms out
 icon: broadcast
 tagline: AI writes the captions in the creator's own voice, and the posts go out on schedule on eight platforms.
@@ -11,13 +11,13 @@ order: 2
 accent: '#4cc9f0'
 private: true
 skills: [Python, FastAPI, React, TypeScript, SQLite, LLMs, Claude API, OpenAI API, Whisper, Prompt Engineering, ffmpeg, OpenCV, REST APIs, Scheduling, Automation, Human-in-the-loop, PWA, VPS Deployment]
-cover:
-  type: image
-  src: /media/reach/connects-dark.webp
-  srcLight: /media/reach/connects-light.webp
-  frame: none
-  alt: "What Reach connects to: AI models that draft the captions, eight networks it publishes to, videos and built-in tools, and outside AI agents"
-  caption: What Reach connects to
+gallery:
+  - type: image
+    src: /media/reach/connects-dark.webp
+    srcLight: /media/reach/connects-light.webp
+    frame: none
+    alt: "What Reach connects to: AI models that draft the captions, eight networks it publishes to, videos and built-in tools, and outside AI agents"
+    caption: What it connects to
 workflow:
   - title: Upload
     icon: upload

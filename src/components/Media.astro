@@ -93,15 +93,6 @@ const loading = eager ? 'eager' : 'lazy';
     height: auto;
   }
 
-  .only-light,
-  :global(:root[data-theme='light']) .only-dark {
-    display: none;
-  }
-
-  :global(:root[data-theme='light']) .only-light {
-    display: block;
-  }
-
   .frame {
     aspect-ratio: 16 / 9;
     border: 0;
