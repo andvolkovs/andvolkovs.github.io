@@ -1,33 +1,49 @@
 ---
 title: Helm
 summary: One place for all my tasks, shared with my AI agents
-icon: wheel
+icon: helm
 tagline: One place to rapidly log all my tasks, by voice or chat. My AI agents can work on them too, but only with my approval.
 year: 2026
 status: live
 role: Solo developer, built with Claude Code
 order: 1.5
-accent: '#10b981'
+accent: '#e26aa3'
 cover:
   type: image
-  src: /media/helm/desktop-board.webp
+  src: /media/helm/desktop-board-dark.webp
+  srcLight: /media/helm/desktop-board-light.webp
   alt: Helm's board on a desktop, with a tab and a coloured panel per project, tasks grouped by Now, Soon and Someday and their key words in bold
   caption: The board, one panel per project
 gallery:
-  - type: image
-    src: /media/helm/desktop-assistant.webp
-    alt: The assistant panel suggesting an order for open tasks, with a reason for each
+  - type: embed
+    src: /media/helm/stageshow/embed.html?demo=agent-hero&frame=browser
+    frame: browser
+    aspect: 1.991
+    alt: Animated demo. In Claude Code, an agent claims a task from the board over MCP, edits a file and hands it in for review. The card's badge turns to Review and the task is accepted.
+    caption: An agent does a task, I approve it
+  - type: embed
+    src: /media/helm/stageshow/embed.html?demo=assistant&frame=browser
+    frame: browser
+    aspect: 1.855
+    alt: Animated demo. The assistant suggests an order for the Now tasks with a reason for each, and the cards move into that order once it is applied.
     caption: The assistant suggests an order
-  - type: image
-    src: /media/helm/phone-voice.webp
+  - type: embed
+    src: /media/helm/stageshow/embed.html?demo=voice&frame=phone
     frame: none
-    alt: Recording a task by voice on a phone, then the task drafted from what was said, ready to check
+    aspect: 0.4756
+    alt: Animated demo on a phone. Spoken words stream in, Helm drafts the task with its project, priority, estimate and a subtask, and it is added to the Trip to Lisbon project.
     caption: Say a task, check the draft
-  - type: image
-    src: /media/helm/phone-app.webp
+  - type: embed
+    src: /media/helm/stageshow/embed.html?demo=today&frame=phone
     frame: none
-    alt: Helm on three phones, showing the board, Today with its main and secondary tasks, and Focus with the timer
-    caption: On a phone, the board, Today and Focus
+    aspect: 0.4755
+    alt: Animated demo on a phone. A main task on Today is swiped right to finish it, the day's tally moves to 2 of 6 done, and Undo brings it back.
+    caption: Plan the day, swipe a task to finish it
+  - type: image
+    src: /media/helm/desktop-board-dark.webp
+    srcLight: /media/helm/desktop-board-light.webp
+    alt: Helm's board on a desktop, with a tab and a coloured panel per project, tasks grouped by Now, Soon and Someday and their key words in bold
+    caption: The board, one panel per project
   - type: image
     src: /media/helm/themes.webp
     frame: none

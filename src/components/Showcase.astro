@@ -31,7 +31,7 @@ const frameOf = (m: Item) => m.frame ?? (m.type === 'image' || m.type === 'video
       {
         items.map((m, i) => (
           <figure class="slide" data-caption={m.caption ?? ''}>
-            <div class={`win ${frameOf(m)}`}>
+            <div class={`win ${frameOf(m)}`} style={m.aspect ? `--ar: ${m.aspect}` : undefined}>
               {frameOf(m) === 'browser' && (
                 <span class="bar" aria-hidden="true">
                   <i />
@@ -70,6 +70,7 @@ const frameOf = (m: Item) => m.frame ?? (m.type === 'image' || m.type === 'video
 
   <dialog class="zoom" data-zoom aria-label="Enlarged screenshot">
     <img alt="" />
+    <iframe title="" tabindex="-1" hidden></iframe>
   </dialog>
 </div>
 
@@ -110,13 +111,43 @@ const frameOf = (m: Item) => m.frame ?? (m.type === 'image' || m.type === 'video
       // Click a screenshot to see it full size; click or Esc to close
       const zoom = show.querySelector<HTMLDialogElement>('[data-zoom]')!;
       const big = zoom.querySelector('img')!;
+      const live = zoom.querySelector('iframe')!;
       track.querySelectorAll<HTMLImageElement>('img').forEach((img) =>
         img.addEventListener('click', () => {
           big.src = img.currentSrc || img.src;
           big.alt = img.alt;
+          big.hidden = false;
+          live.hidden = true;
           zoom.showModal();
         }),
       );
+      // A live demo takes no pointer events (so swipes move the gallery) and no focus; its frame
+      // is the button: a click, Enter or Space opens a second copy of it, large, in the same dialog
+      track.querySelectorAll<HTMLIFrameElement>('iframe.media').forEach((demo) => {
+        const win = demo.closest<HTMLElement>('.win');
+        if (!win) return;
+        demo.tabIndex = -1;
+        win.dataset.zoomable = '';
+        win.tabIndex = 0;
+        win.setAttribute('role', 'button');
+        win.setAttribute('aria-label', `Enlarge demo: ${demo.title}`);
+        const open = () => {
+          live.style.setProperty('--ar', win.style.getPropertyValue('--ar') || '1.6');
+          live.src = demo.src;
+          live.title = demo.title;
+          live.hidden = false;
+          big.hidden = true;
+          zoom.showModal();
+        };
+        win.addEventListener('click', open);
+        win.addEventListener('keydown', (e) => {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          e.preventDefault();
+          open();
+        });
+      });
+      // Stop the large copy when the dialog closes
+      zoom.addEventListener('close', () => live.removeAttribute('src'));
       zoom.addEventListener('click', () => zoom.close());
       zoom.addEventListener('keydown', (e) => e.stopPropagation());
     });
@@ -253,6 +284,32 @@ const frameOf = (m: Item) => m.frame ?? (m.type === 'image' || m.type === 'video
     border-radius: 20px;
   }
 
+  /* A live demo (an embed). With an `aspect` it is sized as an image would be (in a browser
+     frame, or a phone alone with no frame). Without one it fills the slide and fits itself in.
+     No drop shadow: on an iframe Chrome draws it as a box around the whole frame.
+     It takes no pointer events, so a swipe over it still moves the gallery. */
+  .none:not([style*='--ar']):has(> :global(.media.frame)) {
+    width: 100%;
+    height: 100%;
+  }
+  .win[style*='--ar'] {
+    width: min(100%, calc((var(--stage) - var(--under, 0px) - 2 * var(--pad) - var(--bar, 0px) - 4px) * var(--ar)));
+  }
+  .show .win :global(.media.frame) {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    background: none;
+    border-radius: 0;
+    filter: none;
+    pointer-events: none;
+  }
+  .show .win[style*='--ar'] :global(.media.frame) {
+    height: auto;
+    aspect-ratio: var(--ar);
+  }
+
   /* No frame: the image already has its own shapes */
   .show .none :global(.media) {
     border-radius: 10px;
@@ -340,6 +397,25 @@ const frameOf = (m: Item) => m.frame ?? (m.type === 'image' || m.type === 'video
     background: rgb(4 4 6 / 0.85);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+  }
+  .zoom [hidden] {
+    display: none;
+  }
+  .show .win[data-zoomable] {
+    cursor: zoom-in;
+  }
+  .show .win[data-zoomable]:focus-visible {
+    outline: 2px solid var(--c);
+    outline-offset: 3px;
+  }
+  .zoom iframe {
+    display: block;
+    width: min(96vw, calc(94vh * var(--ar)));
+    height: auto;
+    aspect-ratio: var(--ar);
+    border: 0;
+    background: none;
+    pointer-events: none;
   }
   .zoom img {
     display: block;

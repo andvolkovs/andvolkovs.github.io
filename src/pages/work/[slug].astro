@@ -29,9 +29,10 @@ const { Content } = await render(project);
 
 const ogImage = data.cover?.type === 'image' ? data.cover.src : data.cover?.poster;
 
-// Cover first, then the gallery, without showing the same file twice.
+// Cover first, then the gallery, without showing the same file twice. A cover the gallery
+// lists too shows where the gallery puts it (so live demos can come before it).
 const media = [data.cover, ...data.gallery].filter(
-  (m, i, all): m is NonNullable<typeof m> => !!m && all.findIndex((o) => o?.src === m.src) === i,
+  (m, i, all): m is NonNullable<typeof m> => !!m && all.findLastIndex((o) => o?.src === m.src) === i,
 );
 ---
 

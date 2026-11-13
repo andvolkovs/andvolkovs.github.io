@@ -19,6 +19,8 @@ const media = z.object({
   alt: z.string().optional(),
   /** How the project window frames it: a browser window, a phone, or none. */
   frame: z.enum(['browser', 'phone', 'none']).optional(),
+  /** Width over height, for an embed shown in a browser or phone frame (an iframe has no size of its own). */
+  aspect: z.number().optional(),
 });
 
 const projects = defineCollection({

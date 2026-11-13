@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="data:," />
+    <title>Helm demo</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
+      #root { height: 100%; display: grid; place-items: center; }
+      /* ?frame=phone: the phone alone, with nothing behind it */
+      html[data-frame='phone'] .ss-ground { display: none; }
+      html[data-frame='phone'] .ss-stage { background: none !important; }
+      /* The host gives the phone its shadow; its own would be cut square at the frame's edge */
+      html[data-frame='phone'] .ss-phone { box-shadow: none !important; }
+    </style>
+    <script type="module" crossorigin src="./assets/embed-B-D6u9ea.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/embed-DPvKW-Ob.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

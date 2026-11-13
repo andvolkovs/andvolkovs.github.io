@@ -142,4 +142,18 @@ export const icons: Record<string, ProjectIconArt> = {
       <circle cx="50" cy="50" r="9" fill="#f8fafc" stroke="#022c22" stroke-width="2.5" />
       <path d="M50 44.2l1.5 4.3 4.3 1.5-4.3 1.5-1.5 4.3-1.5-4.3-4.3-1.5 4.3-1.5z" fill="#059669" />`,
   },
+  /** Helm: the app's own icon (apps/web/public/favicon.svg in the Helm repo), a ship's helm that
+   *  doubles as a network, its magenta hub and top handle marking the heading. Drawn on a 512 grid. */
+  helm: {
+    bg: 'linear-gradient(160deg, #1d3245 0%, #0f1c27 100%)',
+    art: `
+      <g transform="scale(0.125)">
+      <line x1="256" y1="110" x2="256" y2="68" stroke-linecap="round" stroke="#e26aa3" stroke-width="26"/><line x1="359.2" y1="152.8" x2="388.9" y2="123.1" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="402" y1="256" x2="444" y2="256" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="359.2" y1="359.2" x2="388.9" y2="388.9" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="256" y1="402" x2="256" y2="444" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="152.8" y1="359.2" x2="123.1" y2="388.9" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="110" y1="256" x2="68" y2="256" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/><line x1="152.8" y1="152.8" x2="123.1" y2="123.1" stroke-linecap="round" stroke="#d5e1e7" stroke-width="26"/>
+      <circle cx="256" cy="256" r="124" fill="none" stroke="#d5e1e7" stroke-width="20"/>
+      <line x1="256" y1="212" x2="256" y2="132" stroke-linecap="round" stroke="#e26aa3" stroke-width="12"/><line x1="287.1" y1="224.9" x2="343.7" y2="168.3" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="300" y1="256" x2="380" y2="256" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="287.1" y1="287.1" x2="343.7" y2="343.7" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="256" y1="300" x2="256" y2="380" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="224.9" y1="287.1" x2="168.3" y2="343.7" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="212" y1="256" x2="132" y2="256" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/><line x1="224.9" y1="224.9" x2="168.3" y2="168.3" stroke-linecap="round" stroke="#d5e1e7" stroke-width="10"/>
+      <circle cx="256" cy="132" r="17" fill="#18293a" stroke="#e26aa3" stroke-width="10"/><circle cx="343.7" cy="168.3" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="380" cy="256" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="343.7" cy="343.7" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="256" cy="380" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="168.3" cy="343.7" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="132" cy="256" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/><circle cx="168.3" cy="168.3" r="17" fill="#18293a" stroke="#d5e1e7" stroke-width="10"/>
+      <circle cx="256" cy="256" r="42" fill="#e26aa3"/>
+      <circle cx="256" cy="256" r="13" fill="#18293a"/>
+      </g>`,
+  },
 };
